@@ -49,7 +49,7 @@ window.onload = function init()
     gl.useProgram( program );
 
     // Create a buffer object, initialize it, and associate it with the
-    //  associated attribute letiable in our vertex shader
+    //  associated attribute variable in our vertex shader
 
     let cBuffer = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, cBuffer );

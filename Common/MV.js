@@ -212,7 +212,7 @@ function add( u, v )
         return result;
     }
     else if ( u.matrix && !v.matrix || !u.matrix && v.matrix ) {
-        throw "add(): trying to add matrix and non-matrix letiables";
+        throw "add(): trying to add matrix and non-matrix variables";
     }
     else {
         if ( u.length != v.length ) {
@@ -255,7 +255,7 @@ function subtract( u, v )
         return result;
     }
     else if ( u.matrix && !v.matrix || !u.matrix && v.matrix ) {
-        throw "subtact(): trying to subtact  matrix and non-matrix letiables";
+        throw "subtact(): trying to subtact  matrix and non-matrix variables";
     }
     else {
         if ( u.length != v.length ) {

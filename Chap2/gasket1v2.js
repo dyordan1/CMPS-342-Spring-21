@@ -63,7 +63,7 @@ window.onload = function init()
     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(points), gl.STATIC_DRAW );
 
-    // Associate out shader letiables with our data buffer
+    // Associate out shader variables with our data buffer
     let vPos = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPos, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPos );
