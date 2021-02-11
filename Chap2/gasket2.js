@@ -1,11 +1,11 @@
 "use strict";
 
-var canvas;
-var gl;
+let canvas;
+let gl;
 
-var points = [];
+let points = [];
 
-var NumTimesToSubdivide = 5;
+let NumTimesToSubdivide = 5;
 
 window.onload = function init()
 {
@@ -20,7 +20,7 @@ window.onload = function init()
 
     // First, initialize the corners of our gasket with three points.
 
-    var vertices = [
+    let vertices = [
         vec2( -1, -1 ),
         vec2(  0,  1 ),
         vec2(  1, -1 )
@@ -37,18 +37,18 @@ window.onload = function init()
 
     //  Load shaders and initialize attribute buffers
 
-    var program = initShaders( gl, "vertex-shader", "fragment-shader" );
+    let program = initShaders( gl, "vertex-shader", "fragment-shader" );
     gl.useProgram( program );
 
     // Load the data into the GPU
 
-    var bufferId = gl.createBuffer();
+    let bufferId = gl.createBuffer();
     gl.bindBuffer( gl.ARRAY_BUFFER, bufferId );
     gl.bufferData( gl.ARRAY_BUFFER, flatten(points), gl.STATIC_DRAW );
 
-    // Associate out shader variables with our data buffer
+    // Associate out shader letiables with our data buffer
 
-    var vPosition = gl.getAttribLocation( program, "vPosition" );
+    let vPosition = gl.getAttribLocation( program, "vPosition" );
     gl.vertexAttribPointer( vPosition, 2, gl.FLOAT, false, 0, 0 );
     gl.enableVertexAttribArray( vPosition );
 
@@ -72,9 +72,9 @@ function divideTriangle( a, b, c, count )
 
         //bisect the sides
 
-        var ab = mix( a, b, 0.5 );
-        var ac = mix( a, c, 0.5 );
-        var bc = mix( b, c, 0.5 );
+        let ab = mix( a, b, 0.5 );
+        let ac = mix( a, c, 0.5 );
+        let bc = mix( b, c, 0.5 );
 
         --count;
 
