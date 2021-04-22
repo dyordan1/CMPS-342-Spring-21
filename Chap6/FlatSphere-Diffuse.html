@@ -23,27 +23,22 @@ main()
     vec3 pos = (modelViewMatrix * vPosition).xyz;
     vec3 light = lightPosition.xyz;
     vec3 L;
-    
+
     // check for directional light
-    
+
     if(lightPosition.w == 0.0) L = normalize(lightPosition.xyz);
     else L = normalize( lightPosition.xyz - pos );
-
-
-	
-    vec3 E = -normalize( pos );
-    vec3 H = normalize( L + E );
 
     // Transform vertex normal into eye coordinates
     vec3 N = normalize( normalMatrix*vNormal.xyz);
 
     // Compute terms in the illumination equation
-    
+
     float Kd = max( dot(L, N), 0.0 );
     vec4  diffuse = Kd*diffuseProduct;
 
     gl_Position = projectionMatrix * modelViewMatrix * vPosition;
-    
+
     fColor = diffuse;
 
     fColor.a = 1.0;
@@ -84,7 +79,7 @@ main()
 <script type="text/javascript" src="../Common/initShaders.js"></script>
 
 <script type="text/javascript" src="../Common/MV.js"></script>
-<script type="text/javascript" src="FlatSphere.js"></script>
+<script type="text/javascript" src="FlatSphere-Diffuse.js"></script>
 
 <body>
 <canvas id="gl-canvas" width="512" height="512">
