@@ -582,8 +582,9 @@ function length( u )
 
 function normalize( u, excludeLastComponent )
 {
+    let last
     if ( excludeLastComponent ) {
-        let last = u.pop();
+        last = u.pop();
     }
 
     let len = length( u );
